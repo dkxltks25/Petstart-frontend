@@ -20,7 +20,7 @@ const  LoggedOutRouter = ()=>(
 const AppRouter = ({isLoggedIn})=>{
     console.log(isLoggedIn);
     return(
-    isLoggedIn ? (<LoggedInRouter/>)  : <LoggedOutRouter /> 
+    !isLoggedIn ? (<LoggedInRouter/>)  : <LoggedOutRouter /> 
     )
 }
 export default AppRouter;
