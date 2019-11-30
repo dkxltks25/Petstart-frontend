@@ -79,9 +79,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function PersistentDrawerLeft({isLoggedIn}) {
-    console.log(isLoggedIn);
 const preventDefault = () => {
-    console.log(1);
 };
   const classes = useStyles();
   const theme = useTheme();

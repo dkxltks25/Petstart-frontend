@@ -59,7 +59,7 @@ export default ({
                         <TextField id="outlined-basic" type ="email" label={"email"} {...email} variant="outlined" />
                         <TextField id="outlined-basic" type = "password"label={"password"} {...password} variant="outlined" />
                         <TextField id="outlined-basic" type = "text"label={"username"} {...username} variant="outlined" />
-                        <Button className={classes.Button} variant="contained" onSubmit = {onsubmit}color="primary">회원가입</Button>
+                        <Button className={classes.Button} variant="contained" onClick = {onsubmit}color="primary">회원가입</Button>
                 </form>
             )
         }
