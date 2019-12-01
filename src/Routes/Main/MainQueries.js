@@ -1,22 +1,18 @@
 import {gql} from "apollo-boost";
 
 
-export const myPet = gql`
-      {
-          myPets{
-               id,
-               name,
-               age,
-               sex,
-               weight,
-               height,
-               species,
-               deviceName,
-               createdAt,
-               updatedAt
-          }
-        
-     }
+export const SELECTTEMP = gql`
+    query selectTemp($deviceName:String!)
+    {
+        selectTemp(deviceName:$deviceName)
+        {
+            Temp
+            createdAt,
+                
+        }
+    }  
+
+    
 `;
 
 export const REGISTERPET = gql`
@@ -30,10 +26,4 @@ export const REGISTERPET = gql`
          height:$height,
          deviceName:$deviceName
      )}
-`;
-
-export const myPetIs = gql`
-     {
-          myPetIs
-     }
 `;

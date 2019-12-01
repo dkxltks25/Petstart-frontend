@@ -4,17 +4,12 @@ import PropTypes from "prop-types";
 import Auth from "../Routes/Auth/index";
 import Main from "../Routes/Main/index";
 import Register from "../Routes/Register/index";
-import { useQuery } from "react-apollo-hooks";
-import { myPet } from "../Routes/Register/RegisterQuery";
-import ViewAnimal from "../Routes/ViewAnimal";
 const LoggedInRouter = ()=>{
-    const {data} = useQuery(myPet);
-    
+   
     return(
     <Switch>
-        <Route exact path="/" component = {Main}></Route>
-        
-        { data && data.myPets && data.myPets.length === 0 ? (<RegistPet/>) : (<Route exeact path='/View' component={ViewAnimal}></Route>)}
+       <Route exact path="/" component = {Main}></Route> 
+       <RegistPet/>
     </Switch>
     )
 }

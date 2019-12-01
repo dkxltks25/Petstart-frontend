@@ -9,7 +9,7 @@ export default({
     age,
     weight,
     height,
-    device,
+    deviceName,
     onsubmit 
 })=>{
     const useStyle = makeStyle(theme=>({
@@ -62,7 +62,7 @@ export default({
                         <TextField className={Classes.ContainerInput} id="outlined-basic" type ="Text" label={"PET AGE"} {...age} variant="standard"></TextField>
                         <TextField className={Classes.ContainerInput} id="outlined-basic" type ="Text" label={"WEIGHT"} {...weight} variant="standard"></TextField>
                         <TextField className={Classes.ContainerInput} id="outlined-basic" type ="Text" label={"HEIGHT"} {...height} variant="standard"></TextField>
-                        <TextField className={Classes.ContainerInput} id="outlined-basic" type ="Text" label={"DEVICE-NUMBER"} {...device} variant="standard"></TextField>
+                        <TextField className={Classes.ContainerInput} id="outlined-basic" type ="Text" label={"DEVICE-NUMBER"} {...deviceName} variant="standard"></TextField>
 
                         <Button type="submit" className = {Classes.ContainerButton}variant="contained" color="primary">등록</Button>
                     </div>

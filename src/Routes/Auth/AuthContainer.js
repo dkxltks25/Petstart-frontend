@@ -47,6 +47,7 @@ export default () =>{
                 if(CheckValue(password,"패스워드")){
                    if(CheckValue(username,"사용자명")){
                        try{
+                           
                            console.log(email.value);
                            console.log(password.value);
                            console.log(username.value);

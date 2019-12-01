@@ -1,10 +1,11 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from "@material-ui/core/Paper";
-import { CardMedia,TextField, Typography, Link } from '@material-ui/core';
+import { Typography, Link } from '@material-ui/core';
 import Line from "../../Component/LineChart";
 import { useQuery } from "react-apollo-hooks";
 import { myPet } from "../Register/RegisterQuery";
+import Loader from "../../Component/Loader.js";
 export default ()=>{
     const useStyle = makeStyles(theme=>({
         Container:{
@@ -55,36 +56,23 @@ export default ()=>{
             padding:"50px 20px 50px 20px"
         }
     }))
-
     const Classes = useStyle();
     const {data,loading} = useQuery(myPet);
-    
+    if(!loading){
+        console.log(data);
+    }
     return(
         <div className={Classes.Container}>
-            {!loading}
-            {data &&
-            data.myPets &&
-            data.myPets.map(index=>console.log(index))}
+            {loading === true ? <Loader/> : ( 
+            <>
             <Paper className={Classes.leftContainer}>
             {data &&
             data.myPets &&
-            data.myPets.length === 1 ?(
+            data.myPets.length === 1 ? (
                 <div className={Classes.AnimalInfo}>
-                <div className= {Classes.AnimalInfoTop}>
-                    <CardMedia
-                            className ={Classes.AnimalPicture}
-                    /> 
-                    <div className= {Classes.AnimalTextWrap}>
-                        <TextField className = {Classes.AnimalText} id="outlined-basic" type ="email" label={"email"} variant="outlined"></TextField>
-                        <TextField className = {Classes.AnimalText} id="outlined-basic" type ="email" label={"email"} variant="outlined"></TextField>
-                        <TextField className = {Classes.AnimalText} id="outlined-basic" type ="email" label={"email"} variant="outlined"></TextField>
-                        <TextField className = {Classes.AnimalText} id="outlined-basic" type ="email" label={"email"} variant="outlined"></TextField>
-                        <TextField className = {Classes.AnimalText} id="outlined-basic" type ="email" label={"email"} variant="outlined"></TextField>
-                    </div>
-                </div>
 
                 <div className = {Classes.AnimalInfoBottom}>
-                <Line className = {Classes.HealthChart}></Line>
+                <Line deviceName ={data.myPets[0].deviceName} className = {Classes.HealthChart}></Line>
                 </div>
             </div>
             ):(
@@ -104,6 +92,11 @@ export default ()=>{
                   <Paper></Paper>
                 </div>
             </Paper>
+            </>
+            )
+
+            }
+           
         </div>
     )
 };

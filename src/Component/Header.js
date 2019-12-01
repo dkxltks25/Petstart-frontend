@@ -160,26 +160,8 @@ const preventDefault = () => {
             </ListItem>
           ))}
         </List>
-        <List>
-        <Link href={"#/menu"} onClick={preventDefault} color= "inherit">
-            <ListItem button key="Inbox">
-                <ListItemIcon>
-                        <InboxIcon/>
-                </ListItemIcon>
-            </ListItem>
-        </Link>
-
-        </List>
+        
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-         
-        </List>
       </Drawer>
       <main
         className={clsx(classes.content, {
