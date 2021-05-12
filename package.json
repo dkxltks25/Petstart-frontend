@@ -9,7 +9,7 @@
     "@material-ui/pickers": "^3.2.8",
     "apollo-boost": "^0.4.4",
     "babel-loader": "^8.0.6",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "date-fns": "^2.8.1",
     "graphql": "^14.5.8",
     "loadsh": "^0.0.4",
